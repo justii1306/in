@@ -1,5 +1,5 @@
 #in
-
+```
 CREATE TABLE player
 ( player_id number(10) NOT NULL,
   player_name varchar2(50) NOT NULL,
@@ -13,3 +13,4 @@ create table discipline
   discipline_name varchar2(50),
   constraint discipline_pk primary key (discipline_id)
  );
+```
