@@ -38,13 +38,13 @@ create table discipline
 );
 
 
-create table match
-(match_id number(10) NOT NULL,
+create table match(
+match_id NUMBER GENERATED ALWAYS AS IDENTITY,
 match_date date NOT NULL,
 match_city varchar2(20) not null,
-match_city_host varchar1(1) not null,
-set_lost number(10) not null,
-set_won number(10) not null,
-result varchar1(1) not null,
+match_city_host varchar(1) not null,
+set_lost number not null,
+set_won number not null,
+result varchar(1) not null,
 constraint match_pk primary key (match_id)) 
 ```
