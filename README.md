@@ -36,4 +36,15 @@ create table discipline
   block_on_set number(10) not null,
   constraint player_fk foreign key (player_id) references player(player_id)
 );
+
+
+create table match
+(match_id number(10) NOT NULL,
+match_date date NOT NULL,
+match_city varchar2(20) not null,
+match_city_host varchar1(1) not null,
+set_lost number(10) not null,
+set_won number(10) not null,
+result varchar1(1) not null,
+constraint match_pk primary key (match_id)) 
 ```
