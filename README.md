@@ -14,8 +14,9 @@ create table discipline
   constraint discipline_pk primary key (discipline_id)
  );
  
- CREATE TABLE statistcs
+CREATE TABLE statistcs
 ( player_id number(10) NOT NULL,
+match_id number(10) not null,
   serve_sum number(10) NOT NULL,
   serve_ace number(10) NOT NULL,
   serve_error number(10) NOT NULL,
@@ -34,9 +35,9 @@ create table discipline
   spike_perfect_percentage number(10) not null,
   block_sum number(10) not null,
   block_on_set number(10) not null,
-  constraint player_fk foreign key (player_id) references player(player_id)
+  constraint player_fk foreign key (player_id) references player(player_id),
+  constraint match_fk foreign key (match_id) references match(match_id)
 );
-
 
 create table match(
 match_id NUMBER GENERATED ALWAYS AS IDENTITY,
