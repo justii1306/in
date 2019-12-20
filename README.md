@@ -95,7 +95,10 @@ ADD (
 );
 
 insert  into player values (123456, 'Fabian Drzyzga', 95, 196)
-```
+
+insert into statistcs (player_id, match_id, serve_sum, serve_ace, serve_error, serve_ace_on_set, receive_sum, receive_error, receive_positive,
+receive_perfect, spike_sum, spike_error, spike_blocked, spike_perfect, block_sum, block_on_set) values
+(123456, 7, 10, 2, 1, 0.8, 15, 3, 10, 6, 8, 1, 0, 4, 3, 0.9)
 
 create or replace trigger positive_spike
 before insert on statistcs
@@ -103,3 +106,6 @@ for each row
 begin
 :new.spike_perfect_percentage := (:new.spike_perfect * 100 / :new.spike_sum);
 end;
+
+```
+
