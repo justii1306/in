@@ -75,4 +75,9 @@ begin
 :new.receive_positive := ( :new.receive_perfect * 100 / :new.receive_sum);
 end;
 
+ALTER TABLE player
+ADD (
+    player_weight number(10) not null,
+    player_height number(10) not null
+);
 ```
