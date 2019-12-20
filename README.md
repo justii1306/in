@@ -72,8 +72,9 @@ create or replace trigger perfect_receive
 before insert on statistcs
 for each row
 begin
-:new.receive_positive := ( :new.receive_perfect * 100 / :new.receive_sum);
+:new.receive_perfect_percentagee := ( :new.receive_perfect * 100 / :new.receive_sum);
 end;
+
 
 ALTER TABLE player
 ADD (
