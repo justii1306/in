@@ -80,4 +80,18 @@ ADD (
     player_weight number(10) not null,
     player_height number(10) not null
 );
+
+INSERT INTO match
+(match_date, match_city, match_city_host,set_lost,set_won )
+VALUES
+(to_date('03-02-2019', 'dd-mm-yyyy'),'Lodz','h',2,3)
+
+
+ALTER TABLE player
+ADD (
+    player_weight number(10) not null,
+    player_height number(10) not null
+);
+
+insert  into player values (123456, 'Fabian Drzyzga', 95, 196)
 ```
