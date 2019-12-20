@@ -15,8 +15,8 @@ create table discipline
  );
  
 CREATE TABLE statistcs
-( player_id number(10) NOT NULL,
-match_id number(10) not null,
+( player_id number NOT NULL,
+match_id number not null,
   serve_sum number(10) NOT NULL,
   serve_ace number(10) NOT NULL,
   serve_error number(10) NOT NULL,
@@ -27,7 +27,6 @@ match_id number(10) not null,
   receive_positive_percentage number(10) NOT NULL,
   receive_perfect number(10) NOT NULL,
   receive_perfect_percentagee number(10) NOT NULL,
-  receive_positive_percentage number(10) NOT NULL,
   spike_sum number(10) NOT NULL,
   spike_error number(10) NOT NULL,
   spike_blocked number(10) not null,
@@ -38,6 +37,7 @@ match_id number(10) not null,
   constraint player_fk foreign key (player_id) references player(player_id),
   constraint match_fk foreign key (match_id) references match(match_id)
 );
+
 
 create table match(
 match_id NUMBER GENERATED ALWAYS AS IDENTITY,
