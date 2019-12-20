@@ -13,4 +13,27 @@ create table discipline
   discipline_name varchar2(50),
   constraint discipline_pk primary key (discipline_id)
  );
+ 
+ CREATE TABLE statistcs
+( player_id number(10) NOT NULL,
+  serve_sum number(10) NOT NULL,
+  serve_ace number(10) NOT NULL,
+  serve_error number(10) NOT NULL,
+  serve_ace_on_set number(10) NOT NULL,
+  receive_sum number(10) NOT NULL,
+  receive_error number(10) NOT NULL,
+  receive_positive number(10) NOT NULL,
+  receive_positive_percentage number(10) NOT NULL,
+  receive_perfect number(10) NOT NULL,
+  receive_perfect_percentagee number(10) NOT NULL,
+  receive_positive_percentage number(10) NOT NULL,
+  spike_sum number(10) NOT NULL,
+  spike_error number(10) NOT NULL,
+  spike_blocked number(10) not null,
+  spike_perfect number(10) not null,
+  spike_perfect_percentage number(10) not null,
+  block_sum number(10) not null,
+  block_on_set number(10) not null,
+  constraint player_fk foreign key (player_id) references player(player_id)
+);
 ```
