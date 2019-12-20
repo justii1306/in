@@ -61,5 +61,18 @@ else
 end if;
 end;
 
+create or replace trigger positive_receive
+before insert on statistcs
+for each row
+begin
+:new.receive_positive := ((:new.receive_positive + :new.receive_perfect) * 100 / :new.receive_sum);
+end;
+
+create or replace trigger perfect_receive
+before insert on statistcs
+for each row
+begin
+:new.receive_positive := ( :new.receive_perfect * 100 / :new.receive_sum);
+end;
 
 ```
