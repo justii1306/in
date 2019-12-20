@@ -65,7 +65,7 @@ create or replace trigger positive_receive
 before insert on statistcs
 for each row
 begin
-:new.receive_positive := ((:new.receive_positive + :new.receive_perfect) * 100 / :new.receive_sum);
+:new.receive_positive_percentage := ((:new.receive_positive + :new.receive_perfect) * 100 / :new.receive_sum);
 end;
 
 create or replace trigger perfect_receive
@@ -96,3 +96,10 @@ ADD (
 
 insert  into player values (123456, 'Fabian Drzyzga', 95, 196)
 ```
+
+create or replace trigger positive_spike
+before insert on statistcs
+for each row
+begin
+:new.spike_perfect_percentage := (:new.spike_perfect * 100 / :new.spike_sum);
+end;
