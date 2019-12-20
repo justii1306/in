@@ -48,4 +48,18 @@ set_lost number not null,
 set_won number not null,
 result varchar(1) not null,
 constraint match_pk primary key (match_id)) 
+
+create or replace trigger trg_bi_test
+before insert on match
+for each row
+begin
+if :new.set_lost > :new.set_won
+then
+:new.result := 'l';
+else 
+:new.result := 'w';
+end if;
+end;
+
+
 ```
